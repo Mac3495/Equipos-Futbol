@@ -20,5 +20,12 @@ public class DetalleActivity extends AppCompatActivity {
         imagenDetalle = (ImageView) findViewById(R.id.imagen_detalle);
         nombre = (TextView) findViewById(R.id.texto_detalle);
         descripcion = (TextView) findViewById(R.id.descripcion_detalle);
+
+        Bundle bundle = getIntent().getExtras();
+        Equipo equipo = (Equipo) bundle.getSerializable("equipo");
+
+        imagenDetalle.setImageResource(equipo.getImagen());
+        nombre.setText(equipo.getNombre());
+        descripcion.setText(equipo.getDescripcion());
     }
 }
